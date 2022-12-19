@@ -18,13 +18,13 @@
 
 function init() {
   //Pth = Module.cwrap("Pt", "number", ["number", "number", "number", "number"]);
-  calcg2 = Module.cwrap("g2calc", "number", [
+  /*calcg2 = Module.cwrap("g2calc", "number", [
     "number",
     "number",
     "number",
     "number",
     "number"
-  ]);
+  ]);*/
 }
 window.onload = init();
 function cArray(size) {
