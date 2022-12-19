@@ -65,7 +65,7 @@ var tres;
 var norm=1.0;
 var islog=0;
 var isnorm=0;
-var myArray;
+var myArray=[];
 var c;
 var firstRun=1;
 
@@ -93,10 +93,11 @@ document.getElementById('inputfile')
 				var x = Math.floor(400/width);
 				var y = Math.floor(400/height);
 				c = a.flat();
-				myArray = cArray(width*height);
+				//myArray = cArray(width*height);
 				if(!c.some(isNaN)){
 				  for(const i in c){
-				    myArray.data[i]=c[i];
+				    //myArray.data[i]=c[i];
+				    myArray[i]=c[i];
 				    dataready=true;
 				  }
 					/* for(const i in a){
@@ -137,6 +138,11 @@ function runCcodeG2() {
   document.getElementById('fileLoaded').innerHTML="Calculating ... <div class='spinner-border' role='status'>  <span class='visually-hidden'>Loading...</span></div>";
   setTimeout(function(){runCcodeG2true();},100);
 }
+function getStandardDeviation (array) {
+  const n = array.length
+  const mean = array.reduce((a, b) => a + b) / n
+  return Math.sqrt(array.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n)
+}
 function runCcodeG2true() {
   t0 = performance.now();
 
@@ -147,7 +153,32 @@ function runCcodeG2true() {
   //console.log(binconversion);
   console.log(HEAPF64[(myArray.offset)/8],HEAPF64[(myArray.offset)/8+width*height-1],HEAP32[(myArrayg2.offset)/4],HEAP32[(myArrayg2.offset)/4+598]);
   console.log(myArray,width*height,binconversion,myArrayg2,norm);
-  norm=calcg2(myArray.offset,width*height,binconversion,myArrayg2.offset,norm);
+  norm=1;//calcg2(myArray.offset,width*height,binconversion,myArrayg2.offset,norm);
+	
+	let n = dataLength;
+	let jj = floor(log((n - 1)/3)/log(2));
+	let alen = 2^jj;
+	let av = [];//Table[0, {i, 1, jj}];
+	let data = myArray;
+	let datap=[];
+	let datapm=[];
+	let datad=[];
+	let av=[];
+	let avx=[];
+	let ave=[];
+	for (let i = 0; i < jj; i++) {//For[m = 1, m < jj,
+		for (let j = 0; j < 2^(jj-i-1); j++) {
+	  	datap[j][1] =data[2*j];
+		datap[j][2] =data[2*j+1];
+		datapm[j]=(data[2*j]+data[2*j+1])/2;
+		datad[j] = data[2*j+1]-data[2*j];
+		}
+	  av[i] =getStandardDeviation(datad);
+	  avx[i]=2^i;
+	  ave[i] = av[i]/Math.sqrt(n/2^i);
+	  data = datapm;
+	}
+	myArrayg2=av;
   console.log(myArray,width*height,binconversion,myArrayg2,norm);
   console.log(HEAPF64[(myArray.offset)/8],HEAPF64[(myArray.offset)/8+width*height-1],HEAP32[(myArrayg2.offset)/4],HEAP32[(myArrayg2.offset)/4+598]);
   //document.getElementById('plotlyDiv').innerHTML="<h2>Reconstructed data</h2><span id='plotlyDivG2'></span>";
