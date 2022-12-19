@@ -158,7 +158,7 @@ function runCcodeG2true() {
 	let n = dataLength;
 	let jj = floor(log((n - 1)/3)/log(2));
 	let alen = 2^jj;
-	let av = [];//Table[0, {i, 1, jj}];
+	//let av = [];//Table[0, {i, 1, jj}];
 	let data = myArray;
 	let datap=[];
 	let datapm=[];
