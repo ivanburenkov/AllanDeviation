@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=1024">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <meta name="description" content="Fast online tool to calculate second-order correlation function g(2) for the time-tagged photon detection events.">
+    <meta name="description" content="Fast online tool to calculate Allan deviation for regularly sampled signal.">
     <meta name="author" content="Ivan Burenkov">
-    <title>g(2) calculator</title>
+    <title>Allan deviation</title>
 
     <style>html {
       /* default font-size is 16px - this is set in the default browser stylesheet */ 
@@ -73,17 +73,14 @@
   <div class="collapse multi-collapse" id="help">
     <div class="card card-body">
       <img src="img/g2fig.png" width="400px"></img>
-      This software can calculate second-order autocorrelation function G^(2)(t) using a time interval series. Input file shoud contain tab or line separated values of time delays between consecutive photon detections in text format. Work on other data formats (e.g. produced by commercial software .ht3, .ptu) is in progress.
+      This software can calculate Allan deviation using regularly sampled signal samples. Input file shoud contain tab or line separated values of regular signal samples. Work on other data formats (e.g. produced by commercial software .ht3, .ptu) is in progress.
       <a id="killButton" class="btn btn-close" href="#help" data-toggle="collapse"></a>
     </div>
   </div>
   <div class="collapse multi-collapse" id="refs">
     <div class="card card-body">
       <div class="container-fluid">
-        This web tool is using parts of C++ code written by S.V. Polyakov.
-        <!-- For details see our paper in <a class="link-secondary" href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.95.053806" target="_blank">PRA</a> or
-        <a class="link-secondary" href="https://arxiv.org/pdf/1704.05503" target="_blank">arXiv</a>.
-        For numerical algorithm details: <a class="link-secondary" href="https://doi.org/10.6028/jres.122.030" target="_blank">DOI</a>-->
+        This web tool is based on Mathlab code provided by Allan Migdall.
         <a id="killButton" class="btn btn-close" href="#refs" data-toggle="collapse"></a> 
       </div>
     </div>
