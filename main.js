@@ -161,6 +161,7 @@ function runCcodeG2true() {
 	let alen = Math.pow(2,jj);
 	//let av = [];//Table[0, {i, 1, jj}];
 	let data = myArray;
+	console.log(data);
 	let datap=[];
 	let datapm=[];
 	let datad=[];
