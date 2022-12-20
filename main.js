@@ -310,7 +310,7 @@ function produceOutput(divName,sizeXY,dataCArray,islog,isnorm,ave){
 		  title: "Allan Dewviation",
 	    type: 'log',
 	    autorange: true
-	  };
+	  }
 };
   }
   /* if(isnorm==1){
