@@ -248,7 +248,7 @@ function produceOutput(divName,sizeXY,dataCArray,islog,isnorm,ave){
       tsvG2Values = tsvG2Values + tValues[i] + "\t" + g2Values[i] + "\n";
     }
   }*/
-  tValues=nn;
+  tValues=sizeXY;
   g2Values = dataCArray;
 	g2ValuesErr=ave;
 	for(const i in g2Values){ 
@@ -267,7 +267,7 @@ function produceOutput(divName,sizeXY,dataCArray,islog,isnorm,ave){
         visible: true
       },
       xaxis: "Delay",
-      yaxis: "<var>G</var><sup>(2)<sup>(<var>t</var>)",
+      yaxis: "Allan Deviation",
       type: 'scatter'
     }
   ];
