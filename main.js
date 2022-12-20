@@ -307,7 +307,7 @@ function produceOutput(divName,sizeXY,dataCArray,islog,isnorm,ave){
 	    autorange: true
 	  },
 	  yaxis: {
-		  title: "Allan Dewviation"
+		  title: "Allan Dewviation",
 	    type: 'log',
 	    autorange: true
 	  };
