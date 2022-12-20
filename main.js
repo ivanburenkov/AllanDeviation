@@ -164,7 +164,7 @@ function runCcodeG2true() {
 	console.log(alen);
 	//let av = [];//Table[0, {i, 1, jj}];
 	let data = myArray;
-	console.log(data);
+	//console.log(data);
 	let datap=new Array(Math.pow(2,jj));
 	for (var i = 0; i < Math.pow(2,jj); i++) {
 	  datap[i] = new Array(2); // make each element an array
@@ -181,21 +181,22 @@ function runCcodeG2true() {
 		datapm[j]=(data[2*j]+data[2*j+1])/2;
 		datad[j] = data[2*j+1]-data[2*j];
 		}
-	  console.log(datad);
+	  //console.log(datad);
 		if(Math.pow(2,jj-i-1)-1)>1) {
 			av[i] =getStandardDeviation(datad.slice(0,Math.pow(2,jj-i-1)-1));
 			avx[i]=Math.pow(2,i);
 			ave[i] = av[i]/Math.sqrt(n/2^i);
+			console.log(datad.slice(0,Math.pow(2,jj-i-1)-1));
 		}
 	  data = datapm;
-		console.log(data);
+		//console.log(data);
 	}
 	myArrayg2=av;
-  console.log(myArrayg2,width*height,binconversion,myArrayg2,norm);
+  //console.log(myArrayg2,width*height,binconversion,myArrayg2,norm);
 	console.log(av);
 	console.log(avx);
 	console.log(ave);
-	console.log(data);
+	//console.log(data);
 	
   //console.log(HEAPF64[(myArray.offset)/8],HEAPF64[(myArray.offset)/8+width*height-1],HEAP32[(myArrayg2.offset)/4],HEAP32[(myArrayg2.offset)/4+598]);
   //document.getElementById('plotlyDiv').innerHTML="<h2>Reconstructed data</h2><span id='plotlyDivG2'></span>";
