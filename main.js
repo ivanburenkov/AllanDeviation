@@ -156,7 +156,7 @@ function runCcodeG2true() {
   //console.log(myArray,width*height,binconversion,myArrayg2,norm);
   norm=1;//calcg2(myArray.offset,width*height,binconversion,myArrayg2.offset,norm);
 	
-	let n = dataLength;
+	let n = myArray.length;//dataLength;
 	console.log(n);
 	let jj = Math.floor(Math.log((n - 1)/3)/Math.log(2));
 	console.log(jj);
