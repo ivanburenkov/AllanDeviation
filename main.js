@@ -172,7 +172,7 @@ function runCcodeG2true() {
 	let avx=[];
 	let ave=[];
 	for (let i = 0; i < jj; i++) {//For[m = 1, m < jj,
-		for (let j = 0; j < 2^(jj-i-1); j++) {
+		for (let j = 0; j < Math.pow(2,jj-i-1); j++) {
 	  	datap[j][1] =data[2*j];
 		datap[j][2] =data[2*j+1];
 		datapm[j]=(data[2*j]+data[2*j+1])/2;
