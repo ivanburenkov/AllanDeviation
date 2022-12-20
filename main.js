@@ -148,8 +148,8 @@ function runCcodeG2true() {
   t0 = performance.now();
 
   //myArrayg2 = cArrayInt(599);
-  tmult = document.getElementById("sLoss").value;
-  tres = document.getElementById("tRes").value;
+  tmult = 1;//document.getElementById("sLoss").value;
+  tres = 1;//document.getElementById("tRes").value;
   var binconversion = tmult/tres;
   //console.log(binconversion);
   //console.log(HEAPF64[(myArray.offset)/8],HEAPF64[(myArray.offset)/8+width*height-1],HEAP32[(myArrayg2.offset)/4],HEAP32[(myArrayg2.offset)/4+598]);
