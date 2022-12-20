@@ -153,12 +153,15 @@ function runCcodeG2true() {
   var binconversion = tmult/tres;
   //console.log(binconversion);
   //console.log(HEAPF64[(myArray.offset)/8],HEAPF64[(myArray.offset)/8+width*height-1],HEAP32[(myArrayg2.offset)/4],HEAP32[(myArrayg2.offset)/4+598]);
-  console.log(myArray,width*height,binconversion,myArrayg2,norm);
+  //console.log(myArray,width*height,binconversion,myArrayg2,norm);
   norm=1;//calcg2(myArray.offset,width*height,binconversion,myArrayg2.offset,norm);
 	
 	let n = dataLength;
+	console.log(n);
 	let jj = Math.floor(Math.log((n - 1)/3)/Math.log(2));
+	console.log(jj);
 	let alen = Math.pow(2,jj);
+	console.log(alen);
 	//let av = [];//Table[0, {i, 1, jj}];
 	let data = myArray;
 	console.log(data);
@@ -175,6 +178,7 @@ function runCcodeG2true() {
 		datapm[j]=(data[2*j]+data[2*j+1])/2;
 		datad[j] = data[2*j+1]-data[2*j];
 		}
+	  console.log(datad);	
 	  av[i] =getStandardDeviation(datad);
 	  avx[i]=2^i;
 	  ave[i] = av[i]/Math.sqrt(n/2^i);
