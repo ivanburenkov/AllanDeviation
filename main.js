@@ -186,6 +186,7 @@ function runCcodeG2true() {
 	  avx[i]=Math.pow(2,i);
 	  ave[i] = av[i]/Math.sqrt(n/2^i);
 	  data = datapm;
+		console.log(data);
 	}
 	myArrayg2=av;
   console.log(myArrayg2,width*height,binconversion,myArrayg2,norm);
