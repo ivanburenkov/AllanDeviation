@@ -152,7 +152,7 @@ function runCcodeG2true() {
   tres = document.getElementById("tRes").value;
   var binconversion = tmult/tres;
   //console.log(binconversion);
-  console.log(HEAPF64[(myArray.offset)/8],HEAPF64[(myArray.offset)/8+width*height-1],HEAP32[(myArrayg2.offset)/4],HEAP32[(myArrayg2.offset)/4+598]);
+  //console.log(HEAPF64[(myArray.offset)/8],HEAPF64[(myArray.offset)/8+width*height-1],HEAP32[(myArrayg2.offset)/4],HEAP32[(myArrayg2.offset)/4+598]);
   console.log(myArray,width*height,binconversion,myArrayg2,norm);
   norm=1;//calcg2(myArray.offset,width*height,binconversion,myArrayg2.offset,norm);
 	
@@ -181,7 +181,7 @@ function runCcodeG2true() {
 	}
 	myArrayg2=av;
   console.log(myArray,width*height,binconversion,myArrayg2,norm);
-  console.log(HEAPF64[(myArray.offset)/8],HEAPF64[(myArray.offset)/8+width*height-1],HEAP32[(myArrayg2.offset)/4],HEAP32[(myArrayg2.offset)/4+598]);
+  //console.log(HEAPF64[(myArray.offset)/8],HEAPF64[(myArray.offset)/8+width*height-1],HEAP32[(myArrayg2.offset)/4],HEAP32[(myArrayg2.offset)/4+598]);
   //document.getElementById('plotlyDiv').innerHTML="<h2>Reconstructed data</h2><span id='plotlyDivG2'></span>";
   produceOutput('plotlyDiv',avx,myArrayg2,islog,isnorm);
 
