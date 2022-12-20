@@ -257,7 +257,7 @@ function produceOutput(divName,sizeXY,dataCArray,islog,isnorm,ave){
 	g2ValuesErr=ave;
 	for(const i in g2Values){ 
 		//g2ValuesErr=dataCArray/Math.sqrt(dataLength/nn[i]);
-		tsvG2Values = tsvG2Values + tValues[i] + "\t" + g2Values[i];
+		tsvG2Values = tsvG2Values + tValues[i] + "\t" + g2Values[i] + "\n";
 	}
   document.getElementById("datatsv").value = tsvG2Values;
   
