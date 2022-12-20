@@ -182,7 +182,7 @@ function runCcodeG2true() {
   console.log(myArray,width*height,binconversion,myArrayg2,norm);
   console.log(HEAPF64[(myArray.offset)/8],HEAPF64[(myArray.offset)/8+width*height-1],HEAP32[(myArrayg2.offset)/4],HEAP32[(myArrayg2.offset)/4+598]);
   //document.getElementById('plotlyDiv').innerHTML="<h2>Reconstructed data</h2><span id='plotlyDivG2'></span>";
-  produceOutput('plotlyDiv',599,myArrayg2,islog,isnorm);
+  produceOutput('plotlyDiv',avx,myArrayg2,islog,isnorm);
 
   t1 = Math.floor(performance.now() - t0);
 if(firstRun==1){
@@ -218,7 +218,7 @@ function produceOutput(divName,sizeXY,dataCArray,islog,isnorm){
       }
     }
   }
-  for (i = 0; i < nn; i++) {
+  /*for (i = 0; i < nn; i++) {
     if(isnorm==1){
       tValues[i]=(i-299)*tres/tunitmul;
       g2Values[i] = dataCArray.data[i]/norm;
@@ -233,8 +233,13 @@ function produceOutput(divName,sizeXY,dataCArray,islog,isnorm){
     } else {
       tsvG2Values = tsvG2Values + tValues[i] + "\t" + g2Values[i] + "\n";
     }
-  }
-
+  }*/
+  tValues=nn;
+  g2Values = dataCArray;
+	for(const i in g2Values){ 
+		g2ValuesErr=dataCArray/Math.sqrt(dataLength/nn[i]);
+		tsvG2Values = tsvG2Values + tValues[i] + "\t" + g2Values[i];
+	}
   document.getElementById("datatsv").value = tsvG2Values;
   
   var data = [
