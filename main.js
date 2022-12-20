@@ -26,7 +26,7 @@ function init() {
     "number"
   ]);*/
 }
-window.onload = init();
+/*window.onload = init();
 function cArray(size) {
   var offset = Module._malloc(size * 8);
   Module.HEAPF64.set(new Float64Array(size), offset / 8);
@@ -47,7 +47,7 @@ function cArrayInt(size) {
     offset: offset,
     size: size
   };
-}
+}*/
 /* 
 //This function executes code when WASM has finished loading
 Module["onRuntimeInitialized"] = function () {
@@ -66,6 +66,7 @@ var norm=1.0;
 var islog=0;
 var isnorm=0;
 var myArray=[];
+var myArrayg2=[];
 var c;
 var firstRun=1;
 
@@ -146,7 +147,7 @@ function getStandardDeviation (array) {
 function runCcodeG2true() {
   t0 = performance.now();
 
-  myArrayg2 = cArrayInt(599);
+  //myArrayg2 = cArrayInt(599);
   tmult = document.getElementById("sLoss").value;
   tres = document.getElementById("tRes").value;
   var binconversion = tmult/tres;
