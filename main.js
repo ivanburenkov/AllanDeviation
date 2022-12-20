@@ -183,7 +183,7 @@ function runCcodeG2true() {
 		}
 	  console.log(datad);	
 	  av[i] =getStandardDeviation(datad);
-	  avx[i]=2^i;
+	  avx[i]=Math.pow(2,i);
 	  ave[i] = av[i]/Math.sqrt(n/2^i);
 	  data = datapm;
 	}
@@ -196,7 +196,7 @@ function runCcodeG2true() {
 	
   //console.log(HEAPF64[(myArray.offset)/8],HEAPF64[(myArray.offset)/8+width*height-1],HEAP32[(myArrayg2.offset)/4],HEAP32[(myArrayg2.offset)/4+598]);
   //document.getElementById('plotlyDiv').innerHTML="<h2>Reconstructed data</h2><span id='plotlyDivG2'></span>";
-  produceOutput('plotlyDiv',avx,myArrayg2,islog,isnorm);
+  produceOutput('plotlyDiv',avx,myArrayg2,islog,isnorm,ave);
 
   t1 = Math.floor(performance.now() - t0);
 if(firstRun==1){
@@ -210,7 +210,7 @@ if(firstRun==1){
 }
 
 
-function produceOutput(divName,sizeXY,dataCArray,islog,isnorm){
+function produceOutput(divName,sizeXY,dataCArray,islog,isnorm,ave){
   let nn=sizeXY;
   var g2Values = [];
   var tValues = [];
@@ -250,8 +250,9 @@ function produceOutput(divName,sizeXY,dataCArray,islog,isnorm){
   }*/
   tValues=nn;
   g2Values = dataCArray;
+	g2ValuesErr=ave;
 	for(const i in g2Values){ 
-		g2ValuesErr=dataCArray/Math.sqrt(dataLength/nn[i]);
+		//g2ValuesErr=dataCArray/Math.sqrt(dataLength/nn[i]);
 		tsvG2Values = tsvG2Values + tValues[i] + "\t" + g2Values[i];
 	}
   document.getElementById("datatsv").value = tsvG2Values;
@@ -284,20 +285,33 @@ function produceOutput(divName,sizeXY,dataCArray,islog,isnorm){
   };
   if(islog==1){
     var plotlyLayout = {
-      title: "Second order autocorrelation function",
+      title: "Allan Deviation",
       xaxis: {title: 't, '+tunit},
       type: 'log',
-      yaxis: {title: "G<sup>(2)</sup>(t)",
+      yaxis: {title: "Allan Deviation",
       type: 'log',
           autorange: true
         }
     };
   } else {
-    var plotlyLayout = {
+    /*var plotlyLayout = {
       title: "Second order autocorrelation function",
       xaxis: {title: 't, '+tunit},
       yaxis: {title: "G<sup>(2)</sup>(t)"}
-  };  
+  }; */
+    var plotlyLayout = {
+	     title: "AllanDeviation",
+	  xaxis: {
+		  title: 't, '+tunit,
+	    type: 'log',
+	    autorange: true
+	  },
+	  yaxis: {
+		  title: "Allan Dewviation"
+	    type: 'log',
+	    autorange: true
+	  };
+};
   }
   /* if(isnorm==1){
     var plotlyLayout = {
