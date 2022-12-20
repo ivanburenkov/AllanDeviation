@@ -180,7 +180,12 @@ function runCcodeG2true() {
 	  data = datapm;
 	}
 	myArrayg2=av;
-  console.log(myArray,width*height,binconversion,myArrayg2,norm);
+  console.log(myArrayg2,width*height,binconversion,myArrayg2,norm);
+	console.log(av);
+	console.log(avx);
+	console.log(ave);
+	console.log(data);
+	
   //console.log(HEAPF64[(myArray.offset)/8],HEAPF64[(myArray.offset)/8+width*height-1],HEAP32[(myArrayg2.offset)/4],HEAP32[(myArrayg2.offset)/4+598]);
   //document.getElementById('plotlyDiv').innerHTML="<h2>Reconstructed data</h2><span id='plotlyDivG2'></span>";
   produceOutput('plotlyDiv',avx,myArrayg2,islog,isnorm);
