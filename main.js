@@ -165,7 +165,10 @@ function runCcodeG2true() {
 	//let av = [];//Table[0, {i, 1, jj}];
 	let data = myArray;
 	console.log(data);
-	let datap=[];
+	let datap=new Array(Math.pow(2,jj));
+	for (var i = 0; i < Math.pow(2,jj); i++) {
+	  datap[i] = new Array(2); // make each element an array
+	}
 	let datapm=[];
 	let datad=[];
 	let av=[];
