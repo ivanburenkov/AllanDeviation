@@ -206,8 +206,8 @@ function runCcodeG2true() {
 if(firstRun==1){
   hideonlyID('fitIntro');
   showonlyID('tsvdata');
-  showonlyID('LogScale');		
-  showonlyID('NormG2');
+  //showonlyID('LogScale');		
+  //showonlyID('NormG2');
 	firstRun=0;
 }
   document.getElementById("timing").innerHTML = "Done in " + t1 + " ms";
