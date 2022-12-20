@@ -157,8 +157,8 @@ function runCcodeG2true() {
   norm=1;//calcg2(myArray.offset,width*height,binconversion,myArrayg2.offset,norm);
 	
 	let n = dataLength;
-	let jj = Math.floor(log((n - 1)/3)/log(2));
-	let alen = 2^jj;
+	let jj = Math.floor(Math.log((n - 1)/3)/Math.log(2));
+	let alen = Math.pow(2,jj);
 	//let av = [];//Table[0, {i, 1, jj}];
 	let data = myArray;
 	let datap=[];
@@ -273,6 +273,7 @@ function produceOutput(divName,sizeXY,dataCArray,islog,isnorm){
     var plotlyLayout = {
       title: "Second order autocorrelation function",
       xaxis: {title: 't, '+tunit},
+      type: 'log',
       yaxis: {title: "G<sup>(2)</sup>(t)",
       type: 'log',
           autorange: true
