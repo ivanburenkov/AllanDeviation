@@ -266,8 +266,6 @@ function produceOutput(divName,sizeXY,dataCArray,islog,isnorm,ave){
         array: g2ValuesErr,
         visible: true
       },
-      xaxis: "Delay",
-      yaxis: "Allan Deviation",
       type: 'scatter'
     }
   ];
@@ -283,36 +281,19 @@ function produceOutput(divName,sizeXY,dataCArray,islog,isnorm,ave){
       }
     ]
   };
-  if(islog==1){
-    var plotlyLayout = {
-      title: "Allan Deviation",
-      xaxis: {title: 't, '+tunit},
-      type: 'log',
-      yaxis: {title: "Allan Deviation",
-      type: 'log',
-          autorange: true
-        }
-    };
-  } else {
-    /*var plotlyLayout = {
-      title: "Second order autocorrelation function",
-      xaxis: {title: 't, '+tunit},
-      yaxis: {title: "G<sup>(2)</sup>(t)"}
-  }; */
+  
     var plotlyLayout = {
 	     title: "AllanDeviation",
 	  xaxis: {
-		  title: 't, '+tunit,
-	    type: 'log',
+		type: 'log',
 	    autorange: true
 	  },
 	  yaxis: {
-		  title: "Allan Dewviation",
-	    type: 'log',
+		 type: 'log',
 	    autorange: true
 	  }
 };
-  }
+ 
   /* if(isnorm==1){
     var plotlyLayout = {
       title: "Second order autocorrelation function",
