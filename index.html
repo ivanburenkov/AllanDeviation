@@ -52,9 +52,7 @@
   data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>    
   </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-    </div>
-  <!--
+     
   <ul class="navbar-nav mr-auto">
     <li class="nav-item">
       <a class="nav-link" href="https://ivanburenkov.github.io/"> <span class="fa-home" data-feather="home"></span></a>
@@ -63,16 +61,18 @@
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <span class="fa-menu" data-feather="menu">
       </a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="navbarCollapse">
+         <!--
         <li><a class="dropdown-item active" href="https://ivanburenkov.github.io/g2" title="g2 calculator">G<sup>(2)</sup> calculator</a></li>
         <li><a class="dropdown-item" href="https://ivanburenkov.github.io/genjpd">JPD generator</a></li>
         <li><a class="dropdown-item" href="https://ivanburenkov.github.io/genrpd">PND generator</a></li>
         <li><a class="dropdown-item" href="https://ivanburenkov.github.io/fitjpd">JPD reconstruction</a></li>
         <li><a class="dropdown-item" href="https://ivanburenkov.github.io/spdcalibrate" title="detector calibration">SPD calibration</a></li>
+         -->
       </ul>
     </li>
   </ul>
-  -->
+ 
   <div class="collapse multi-collapse" id="help">
     <div class="card card-body">
       This software can calculate Allan deviation using regularly sampled signal samples. Input file shoud contain tab or line separated values of regular signal samples. Work on other data formats (e.g. produced by commercial software .ht3, .ptu) is in progress.
