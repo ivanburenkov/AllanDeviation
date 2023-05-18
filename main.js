@@ -182,7 +182,7 @@ function runCcodeG2true() {
 		datad[j] = data[2*j+1]-data[2*j];
 		}
 	  //console.log(datad);
-		if(Math.pow(2,jj-i-1)>1) {
+		if(Math.pow(2,jj-i-1)-1>1) {
 			av[i] =getStandardDeviation(datad.slice(0,Math.pow(2,jj-i-1)-1));
 			avx[i]=Math.pow(2,i);
 			ave[i] = av[i]/Math.sqrt(n/2^i);
