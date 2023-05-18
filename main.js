@@ -158,7 +158,7 @@ function runCcodeG2true() {
 	
 	let n = myArray.length;//dataLength;
 	console.log(n);
-	let jj = Math.floor(Math.log((n - 1)/3)/Math.log(2));
+	let jj = Math.floor(Math.log((n - 1))/Math.log(2));
 	console.log(jj);
 	let alen = Math.pow(2,jj);
 	console.log(alen);
